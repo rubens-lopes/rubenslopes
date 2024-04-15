@@ -1,0 +1,35 @@
+---
+import { Icon } from "astro-icon/components";
+
+const year = new Date().getFullYear();
+---
+
+<footer class="pb-10 pt-14 md:pb-14 flex flex-col items-center container space-y-8">
+  <Icon name="logo_r" class="w-[33px] h-[44px] md:w-[54px] md:h-[72px] mb-7" />
+
+  <hr class="block border-0 h-[2px] bg-gradient-to-r from-cadmium-orange via-medium-vermilion to-44% to-metallic-red w-full" />
+
+  <div class="flex space-x-6">
+    <a aria-label="Talk to me" href="mailto:contact@rubenslop.es">
+      <Icon name="mail" class="w-6 h-6 md:w-14 md:h-14" />
+    </a>
+
+    <a aria-label="My LinkedIn profile" href="https://www.linkedin.com/in/rubens-lopes/">
+      <Icon name="linked-in" class="w-6 h-6 md:w-14 md:h-14" />
+    </a>
+
+    <a aria-label="My GitHub profile"
+      href="https://github.com/rubens-lopes">
+      <Icon name="gh" class="w-6 h-6 md:w-14 md:h-14" />
+    </a>
+  </div>
+
+  <p>
+    &copy; Rubens Lopes, {year}.
+  </p>
+
+  <div class="self-start">
+    Designed by <a href="https://www.linkedin.com/in/barrosarah/">Sarah Barros</a> and <a href="https://www.instagram.com/kelvitooo/">Kelvito Oliveira</a>.
+    Developed by me.
+  </div>
+</footer>

@@ -1,0 +1,22 @@
+<svg width="54" height="72" viewBox="0 0 54 72" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clip-path="url(#lafgb8vgga)" fill-rule="evenodd" clip-rule="evenodd">
+        <path d="M36.205 42.031 52.59 72H42.008L23.033 37.346l10.874-4.438-24.554-15.82-.017 29.19 9.583-6.673 4.52 8.207L2.095 62.675 0 64.133.036 0 54 34.77 36.205 42.03z" fill="url(#q24tpdhxkb)"/>
+        <path d="m.019 30.88 9.334-13.793L.036 0 .019 30.88z" fill="#F58634"/>
+        <path d="M9.336 46.278.014 40.446l9.328-6.196-.006 12.028z" fill="#ED3237"/>
+        <path d="m0 64.133 9.336-17.855 2.823-1.965L0 64.132z" fill="#AA2C2E"/>
+        <path d="m12.159 44.313-.328 11.582 4.344-3.024-4.016-8.559z" fill="#ED3237"/>
+        <path d="m23.44 47.812-8.019-5.771 3.498-2.436 4.52 8.207z" fill="#AA2C2E"/>
+        <path d="m36.205 42.031-13.172-4.685 4.546 8.302 8.626-3.617z" fill="#F58634"/>
+        <path d="m42.008 72 7.82-5.053L52.59 72H42.008z" fill="#AA2C2E"/>
+        <path d="m40.016 49.002-5.093 10.057 8.873-3.144-3.78-6.913z" fill="#EF4B37"/>
+    </g>
+    <defs>
+        <linearGradient id="q24tpdhxkb" x1="11.201" y1="47.822" x2="32.053" y2="11.166" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#C52F33"/>
+            <stop offset="1" stop-color="#F58634"/>
+        </linearGradient>
+        <clipPath id="lafgb8vgga">
+            <path fill="#fff" d="M0 0h54v72H0z"/>
+        </clipPath>
+    </defs>
+</svg>
