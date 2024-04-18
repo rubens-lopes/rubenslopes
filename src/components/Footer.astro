@@ -1,27 +1,33 @@
 ---
 import { Icon } from "astro-icon/components";
+import SocialMedia from "./SocialMedia.astro";
 
 const year = new Date().getFullYear();
 ---
 
 <footer class="pb-10 pt-14 md:pb-14 flex flex-col items-center container space-y-8">
-  <Icon name="logo_r" class="w-[33px] h-[44px] md:w-[54px] md:h-[72px] mb-7" />
+  <Icon name="logo_r" class="w-8 h-12 mb-7 md:w-12 md:h-16" />
 
   <hr class="block border-0 h-[2px] bg-gradient-to-r from-cadmium-orange via-medium-vermilion to-44% to-metallic-red w-full" />
 
   <div class="flex space-x-6">
-    <a aria-label="Talk to me" href="mailto:contact@rubenslop.es">
-      <Icon name="mail" class="w-6 h-6 md:w-14 md:h-14" />
-    </a>
+    <SocialMedia
+      title="Talk to me"
+      url="mailto:contact@rubenslop.es"
+      icon="mail"
+    />
 
-    <a aria-label="My LinkedIn profile" href="https://www.linkedin.com/in/rubens-lopes/">
-      <Icon name="linked-in" class="w-6 h-6 md:w-14 md:h-14" />
-    </a>
+    <SocialMedia
+      title="My LinkedIn profile"
+      url="https://www.linkedin.com/in/rubens-lopes/"
+      icon="linked-in"
+    />
 
-    <a aria-label="My GitHub profile"
-      href="https://github.com/rubens-lopes">
-      <Icon name="gh" class="w-6 h-6 md:w-14 md:h-14" />
-    </a>
+    <SocialMedia
+      title="My GitHub profile"
+      url="https://github.com/rubens-lopes"
+      icon="gh"
+    />
   </div>
 
   <p>
