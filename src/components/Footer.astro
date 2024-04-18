@@ -1,8 +1,16 @@
 ---
-import { Icon } from "astro-icon/components";
-import SocialMedia from "./SocialMedia.astro";
+import { Icon } from 'astro-icon/components'
+import { useTranslations } from '$i18n/utils'
+import LangPicker from './LangPicker.astro'
+import SocialMedia from './SocialMedia.astro'
 
-const year = new Date().getFullYear();
+const year = new Date().getFullYear()
+
+///@ts-ignore
+const t = useTranslations(Astro.currentLocale)
+const madeBy = t(`footer.made-by`)
+  .replace(`{0}`, `<a href="https://www.linkedin.com/in/barrosarah/">Sarah Barros</a>`)
+  .replace(`{1}`, `<a href="https://www.instagram.com/kelvinroliveira">Kelvito Oliveira</a>`)
 ---
 
 <footer class="pb-10 pt-14 md:pb-14 flex flex-col items-center container space-y-8">
@@ -12,30 +20,27 @@ const year = new Date().getFullYear();
 
   <div class="flex space-x-6">
     <SocialMedia
-      title="Talk to me"
+      title={t(`footer.email-label`)}
       url="mailto:contact@rubenslop.es"
       icon="mail"
     />
 
     <SocialMedia
-      title="My LinkedIn profile"
+      title={t(`footer.linked-in-label`)}
       url="https://www.linkedin.com/in/rubens-lopes/"
       icon="linked-in"
     />
 
     <SocialMedia
-      title="My GitHub profile"
+      title={t(`footer.github-label`)}
       url="https://github.com/rubens-lopes"
       icon="gh"
     />
   </div>
 
-  <p>
-    &copy; Rubens Lopes, {year}.
-  </p>
+  <p>&copy; Rubens Lopes, {year}.</p>
 
-  <div class="self-start">
-    Designed by <a href="https://www.linkedin.com/in/barrosarah/">Sarah Barros</a> and <a href="https://www.instagram.com/kelvinroliveira">Kelvito Oliveira</a>.
-    Developed by me.
-  </div>
+  <div set:html={madeBy} class="self-start" />
+
+  <LangPicker />
 </footer>
