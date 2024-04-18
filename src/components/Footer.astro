@@ -2,7 +2,7 @@
 import { Icon } from 'astro-icon/components'
 import { useTranslations } from '$i18n/utils'
 import LangPicker from './LangPicker.astro'
-import SocialMedia from './SocialMedia.astro'
+import SocialMedias from './SocialMedias.astro'
 
 const year = new Date().getFullYear()
 
@@ -13,34 +13,18 @@ const madeBy = t(`footer.made-by`)
   .replace(`{1}`, `<a href="https://www.instagram.com/kelvinroliveira">Kelvito Oliveira</a>`)
 ---
 
-<footer class="pb-10 pt-14 md:pb-14 flex flex-col items-center container space-y-8">
+<footer class="pb-10 pt-14 md:pb-14 container flex flex-col items-center">
   <Icon name="logo_r" class="w-8 h-12 mb-7 md:w-12 md:h-16" />
 
-  <hr class="block border-0 h-[2px] bg-gradient-to-r from-cadmium-orange via-medium-vermilion to-44% to-metallic-red w-full" />
+  <div class="space-y-8 flex flex-col items-center">
+    <hr class="block border-0 h-[2px] bg-gradient-to-r from-cadmium-orange via-medium-vermilion to-44% to-metallic-red w-full" />
 
-  <div class="flex space-x-6">
-    <SocialMedia
-      title={t(`footer.email-label`)}
-      url="mailto:contact@rubenslop.es"
-      icon="mail"
-    />
+    <SocialMedias />
 
-    <SocialMedia
-      title={t(`footer.linked-in-label`)}
-      url="https://www.linkedin.com/in/rubens-lopes/"
-      icon="linked-in"
-    />
-
-    <SocialMedia
-      title={t(`footer.github-label`)}
-      url="https://github.com/rubens-lopes"
-      icon="gh"
-    />
+    <p>&copy; Rubens Lopes, {year}.</p>
+  
+    <div set:html={madeBy} class="self-start" />
   </div>
 
-  <p>&copy; Rubens Lopes, {year}.</p>
-
-  <div set:html={madeBy} class="self-start" />
-
-  <LangPicker />
+  <LangPicker class="md:invisible mt-6" />
 </footer>

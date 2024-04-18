@@ -8,8 +8,10 @@ export default {
     },
 		extend: {
 			colors: {
+				cultured: `#f5f5f5`,
 				snow: `#fffafa`,
 				'metallic-red': `#aa2c2e`,
+				'misty-rose': `#ffe6e6`,
 				'eerie-black': `#1e1e1e`,
 				'cadmium-orange': `#f58634`,
 				'medium-vermilion': `#cd5531`,
