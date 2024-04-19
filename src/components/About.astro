@@ -1,9 +1,16 @@
+---
+import { useTranslations } from '$i18n/utils'
+
+///@ts-ignore
+const t = useTranslations(Astro.currentLocale)
+---
+
 <div class="container mx-auto space-y-4 text-justify">
-  <h1 class="text-2xl">I've been a software engineer since 2010,</h1>
+  <h1 class="text-2xl">{t(`about.title`)}</h1>
 
-  <p>during this time, I've worked with various technologies, but always with <strong>C#</strong> and <strong>JavaScript</strong> as the backbone of my projects. These languages are currently the most proficient in my toolbox, but I'm always open to exploring new languages and paradigms, such as <strong>Rust</strong> and <strong>F#</strong>.</p>
+  <p set:html={t(`about.first-paragraph`)} />
 
-  <p>A significant portion of this time, I've worked as a generalist, developing and delivering end-to-end software solutions, collaborating in areas like devOps, back-end, front-end, and even mobile. At the moment, I'm seeking to deepen and enhance my skills in front-end development, an area where I excel and navigate with mastery.</p>
+  <p>{t(`about.second-paragraph`)}</p>
 
-  <p>I'm a creative and curious individual who enjoys working closely with stakeholders, product owners, and product managers. I strive to understand business needs, aiming for deliverables that meet and enhance the end-user experience.</p>
+  <p>{t(`about.third-paragraph`)}</p>
 </div>

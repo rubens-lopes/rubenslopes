@@ -1,35 +1,30 @@
 ---
-import { Icon } from "astro-icon/components";
+import { Icon } from 'astro-icon/components'
+import { useTranslations } from '$i18n/utils'
+import LangPicker from './LangPicker.astro'
+import SocialMedias from './SocialMedias.astro'
 
-const year = new Date().getFullYear();
+const year = new Date().getFullYear()
+
+///@ts-ignore
+const t = useTranslations(Astro.currentLocale)
+const madeBy = t(`footer.made-by`)
+  .replace(`{0}`, `<a href="https://www.linkedin.com/in/barrosarah/">Sarah Barros</a>`)
+  .replace(`{1}`, `<a href="https://www.instagram.com/kelvinroliveira">Kelvito Oliveira</a>`)
 ---
 
-<footer class="pb-10 pt-14 md:pb-14 flex flex-col items-center container space-y-8">
-  <Icon name="logo_r" class="w-[33px] h-[44px] md:w-[54px] md:h-[72px] mb-7" />
+<footer class="pb-10 pt-14 md:pb-14 container flex flex-col items-center">
+  <Icon name="logo_r" class="w-8 h-12 mb-7 md:w-12 md:h-16" />
 
-  <hr class="block border-0 h-[2px] bg-gradient-to-r from-cadmium-orange via-medium-vermilion to-44% to-metallic-red w-full" />
+  <div class="space-y-8 flex flex-col items-center w-full">
+    <hr class="block border-0 h-[2px] bg-gradient-to-r from-cadmium-orange via-medium-vermilion to-44% to-metallic-red w-full" />
 
-  <div class="flex space-x-6">
-    <a aria-label="Talk to me" href="mailto:contact@rubenslop.es">
-      <Icon name="mail" class="w-6 h-6 md:w-14 md:h-14" />
-    </a>
+    <SocialMedias />
 
-    <a aria-label="My LinkedIn profile" href="https://www.linkedin.com/in/rubens-lopes/">
-      <Icon name="linked-in" class="w-6 h-6 md:w-14 md:h-14" />
-    </a>
-
-    <a aria-label="My GitHub profile"
-      href="https://github.com/rubens-lopes">
-      <Icon name="gh" class="w-6 h-6 md:w-14 md:h-14" />
-    </a>
+    <p>&copy; Rubens Lopes, {year}.</p>
+  
+    <div set:html={madeBy} class="self-start" />
   </div>
 
-  <p>
-    &copy; Rubens Lopes, {year}.
-  </p>
-
-  <div class="self-start">
-    Designed by <a href="https://www.linkedin.com/in/barrosarah/">Sarah Barros</a> and <a href="https://www.instagram.com/kelvinroliveira">Kelvito Oliveira</a>.
-    Developed by me.
-  </div>
+  <LangPicker class="md:hidden mt-6" />
 </footer>

@@ -1,0 +1,28 @@
+---
+import { useTranslations } from '$i18n/utils'
+import SocialMedia from './SocialMedia.astro'
+
+///@ts-ignore
+const t = useTranslations(Astro.currentLocale)
+---
+
+<div class="flex space-x-6">
+  <SocialMedia
+    title={t(`footer.email-label`)}
+    url="mailto:contact@rubenslop.es"
+    icon="mail"
+  />
+
+  <SocialMedia
+    title={t(`footer.linked-in-label`)}
+    url="https://www.linkedin.com/in/rubens-lopes/"
+    icon="linked-in"
+  />
+
+  <SocialMedia
+    title={t(`footer.github-label`)}
+    url="https://github.com/rubens-lopes"
+    icon="gh"
+  />
+</div>
+

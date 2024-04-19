@@ -1,7 +1,7 @@
-import { defineConfig } from 'astro/config';
-import icon from 'astro-icon';
-import tailwind from '@astrojs/tailwind';
-import vercel from '@astrojs/vercel/serverless';
+import { defineConfig } from 'astro/config'
+import icon from 'astro-icon'
+import tailwind from '@astrojs/tailwind'
+import vercel from '@astrojs/vercel/serverless'
 
 // https://astro.build/config
 export default defineConfig({
@@ -9,8 +9,11 @@ export default defineConfig({
   adapter: vercel({ webAnalytics: { enabled: true } }),
   integrations: [
     tailwind(), 
-    icon({
-      iconDir: `src/svgs`,
-    }),
+    icon({ iconDir: `src/svgs` }),
   ],
+  i18n: {
+    defaultLocale: `en`,
+    locales: [ `en`, `pt-br` ],
+    routing: `manual`,
+  },
 });
