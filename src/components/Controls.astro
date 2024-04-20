@@ -1,0 +1,11 @@
+---
+import LangSwitch from './LangSwitch.astro'
+import ThemeSwitch from './ThemeSwitch.astro'
+
+const { class: css } = Astro.props
+---
+
+<div class:list={["flex space-x-3", css]}>
+  <LangSwitch />
+  <ThemeSwitch />
+</div>

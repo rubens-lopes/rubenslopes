@@ -1,0 +1,10 @@
+---
+import Theme from './Theme.astro'
+
+const { class: css } = Astro.props
+---
+
+<div class:list={[ `switch`, css ]}>
+  <Theme icon="moon" />
+  <Theme icon="sun" active={true} />
+</div>
