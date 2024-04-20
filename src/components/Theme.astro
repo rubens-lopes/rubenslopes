@@ -2,9 +2,8 @@
 import { Icon } from 'astro-icon/components'
 
 const { icon, active } = Astro.props
-const background = active ? `bg-metallic-red` : ``
-const stroke = active ? `stroke-white` : `stroke-metallic-red`
-
+const background = active ? `bg-metallic-red dark:bg-onyx` : ``
+const stroke = active ? `stroke-white` : `stroke-metallic-red dark:stroke-white`
 ---
 
 <button class={`py-2 px-3 rounded-md ${background}`}>

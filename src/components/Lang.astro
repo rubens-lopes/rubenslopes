@@ -6,7 +6,7 @@ const {
   lang,
 } = Astro.props
 
-const active = Astro.currentLocale === lang ? `bg-metallic-red` : ``
+const active = Astro.currentLocale === lang ? `bg-metallic-red dark:bg-onyx` : ``
 ---
 <a class:list={[active, `py-2 px-3 rounded-md`]} {title} aria-label={title} href={`/${lang}`}>
   <Icon name={lang} class="rounded-full size-6" />

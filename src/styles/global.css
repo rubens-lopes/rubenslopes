@@ -10,6 +10,6 @@
 
 @layer components {
   .switch {
-    @apply p-1 bg-cultured rounded-lg flex has-[:focus]:bg-misty-rose has-[:hover]:bg-misty-rose
+    @apply p-1 bg-cultured rounded-lg flex has-[:focus]:bg-misty-rose has-[:hover]:bg-misty-rose dark:bg-outer-space dark:has-[:hover]:bg-taupe-gray dark:has-[:focus]:bg-taupe-gray
   }
 }
