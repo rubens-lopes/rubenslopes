@@ -7,3 +7,9 @@
     text-decoration: underline;
   }
 }
+
+@layer components {
+  .switch {
+    @apply p-1 bg-cultured rounded-lg flex has-[:focus]:bg-misty-rose has-[:hover]:bg-misty-rose
+  }
+}

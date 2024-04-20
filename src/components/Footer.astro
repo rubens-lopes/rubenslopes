@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components'
 import { useTranslations } from '$i18n/utils'
-import LangPicker from './LangPicker.astro'
+import LangSwitch from './LangSwitch.astro'
 import SocialMedias from './SocialMedias.astro'
 
 const year = new Date().getFullYear()
@@ -26,5 +26,5 @@ const madeBy = t(`footer.made-by`)
     <div set:html={madeBy} class="self-start" />
   </div>
 
-  <LangPicker class="md:hidden mt-6" />
+  <LangSwitch class="md:hidden mt-6" />
 </footer>
