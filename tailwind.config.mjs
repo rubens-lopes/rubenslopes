@@ -11,6 +11,7 @@ export default {
 			colors: {
 				'outer-space': `#44454c`,
 				'taupe-gray': `#898989`,
+				'dark-gunmetal': `#1f2028`,
 				onyx: `#35363b`,
 				cultured: `#f5f5f5`,
 				snow: `#fffafa`,
