@@ -3,6 +3,7 @@ import { Icon } from 'astro-icon/components'
 import { useTranslations } from '$i18n/utils'
 import Controls from './Controls.astro'
 import SocialMedias from './SocialMedias.astro'
+import HorizontalRuler from './HorizontalRuler.astro'
 
 const year = new Date().getFullYear()
 
@@ -17,7 +18,7 @@ const madeBy = t(`footer.made-by`)
   <Icon name="logo_r" class="w-8 h-12 mb-7 md:w-12 md:h-16" />
 
   <div class="space-y-8 flex flex-col items-center w-full">
-    <hr class="block border-0 h-[2px] bg-gradient-to-r from-cadmium-orange via-medium-vermilion to-44% to-metallic-red w-full" />
+    <HorizontalRuler />
 
     <SocialMedias />
 
