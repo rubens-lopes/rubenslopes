@@ -9,6 +9,7 @@ export default {
     },
 		extend: {
 			colors: {
+				'pale-pink': `#ffdcdc`,
 				'outer-space': `#44454c`,
 				'taupe-gray': `#898989`,
 				'dark-gunmetal': `#1f2028`,
