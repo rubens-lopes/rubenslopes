@@ -1,10 +1,23 @@
 import { writable } from 'svelte/store'
 
-function createCurrentTheme() {
-  let theme = typeof localStorage !== `undefined` && `theme` in localStorage
-    ? localStorage.getItem(`theme`) as `dark` | `light`
-    : getPrefersColorScheme()
+export type ThemeOptions = `dark` | `light`
 
+function get() {
+  return typeof localStorage !== `undefined` && `theme` in localStorage
+    ? localStorage.getItem(`theme`) as ThemeOptions
+    : getPrefersColorScheme()
+}
+
+function getPrefersColorScheme() {
+  if (typeof window === `undefined`) return `` as ThemeOptions
+
+  return window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? `dark`
+    : `` as ThemeOptions
+}
+
+function createCurrentTheme() {
+  const theme = get()
   const { subscribe, set } = writable(theme)
 
   const lightsOut = () => {
@@ -19,21 +32,12 @@ function createCurrentTheme() {
     set(`light`)
   }
 
-  theme === `dark` ? lightsOut() : letThereBeLight()
-  
   return {
     subscribe,
     lightsOut,
     letThereBeLight,
+    set: () => { theme === `light` ? letThereBeLight() : lightsOut() },
   }
 }
 
-function getPrefersColorScheme() {
-  if (typeof window === `undefined`) return `light`
-
-  return window.matchMedia('(prefers-color-scheme: dark)').matches
-    ? `dark`
-    : `light`
-}
-
-export const currentTheme = createCurrentTheme()
+export const theme = createCurrentTheme()

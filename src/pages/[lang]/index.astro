@@ -8,6 +8,12 @@ import "$styles/global.css"
 const lang = Astro.currentLocale
 ---
 
+<script>
+import { theme } from '$stores/theme'
+
+theme.set()
+</script>
+
 <html {lang} class="font-figtree text-eerie-black bg-metallic-red">
 	<head>
 		<meta charset="utf-8" />
