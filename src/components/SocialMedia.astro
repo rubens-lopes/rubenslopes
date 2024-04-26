@@ -1,9 +1,9 @@
 ---
 import { Icon } from 'astro-icon/components'
 
-const { title, url, icon } = Astro.props
+const { title, url, icon, class: css } = Astro.props
 ---
 
 <a {title} aria-label={title} href={url}>
-  <Icon name={icon} class="size-6 md:size-10" />
+  <Icon name={icon} class={`size-6 md:size-10 ${css}`} />
 </a>
