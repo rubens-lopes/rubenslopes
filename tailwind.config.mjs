@@ -9,6 +9,7 @@ export default {
     },
 		extend: {
 			colors: {
+				'yankees-blue': `#242938`,
 				'pale-pink': `#ffdcdc`,
 				'outer-space': `#44454c`,
 				'taupe-gray': `#898989`,
