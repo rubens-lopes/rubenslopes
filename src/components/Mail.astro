@@ -1,0 +1,14 @@
+---
+import { Icon } from 'astro-icon/components'
+import { useTranslations } from '$i18n/utils'
+
+///@ts-ignore
+const t = useTranslations(Astro.currentLocale)
+
+const title = t(`controls.email-title`)
+---
+
+<a {title} class="text-metallic-red dark:text-white flex items-center space-x-3 md:px-4 md:py-3 dark:stroke-white stroke-metallic-red" aria-label={title} href="mailto:contact@rubenslop.es">
+  <Icon name="mail" class="size-10" />
+  <span class="max-md:hidden">{t(`controls.email-label`)}</span>
+</a>
