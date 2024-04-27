@@ -2,7 +2,7 @@
 import Lang from './Lang.astro'
 const { class: css } = Astro.props
 ---
-<nav class:list={["p-1 bg-cultured rounded-lg flex has-[:focus]:bg-misty-rose has-[:hover]:bg-misty-rose", css]}>
+<nav class:list={["switch", css]}>
   <Lang title="Português (Brasil)" lang="pt-br" />
   <Lang title="English" lang="en" />
 </nav>

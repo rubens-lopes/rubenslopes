@@ -1,0 +1,16 @@
+---
+import LangSwitch from './LangSwitch.astro'
+import Mail from './Mail.astro'
+import ThemeSwitch from './ThemeSwitch.astro'
+
+const { class: css } = Astro.props
+---
+
+<div class:list={["flex space-x-3 items-center", css]}>
+  <Mail />
+
+  <div class="dark:bg-white bg-pale-pink w-0.5 h-9" />
+
+  <LangSwitch />
+  <ThemeSwitch />
+</div>

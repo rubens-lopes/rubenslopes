@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config'
 import icon from 'astro-icon'
 import tailwind from '@astrojs/tailwind'
 import vercel from '@astrojs/vercel/serverless'
+import svelte from '@astrojs/svelte'
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,6 +11,7 @@ export default defineConfig({
   integrations: [
     tailwind(), 
     icon({ iconDir: `src/svgs` }),
+    svelte(),
   ],
   i18n: {
     defaultLocale: `en`,

@@ -1,5 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
+	darkMode: `selector`,
 	content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
 	theme: {
 		container: {
@@ -8,6 +9,12 @@ export default {
     },
 		extend: {
 			colors: {
+				'yankees-blue': `#242938`,
+				'pale-pink': `#ffdcdc`,
+				'outer-space': `#44454c`,
+				'taupe-gray': `#898989`,
+				'dark-gunmetal': `#1f2028`,
+				onyx: `#35363b`,
 				cultured: `#f5f5f5`,
 				snow: `#fffafa`,
 				'metallic-red': `#aa2c2e`,
@@ -17,7 +24,7 @@ export default {
 				'medium-vermilion': `#cd5531`,
 			},
 			fontFamily: {
-				figtree: `"Figtree", sans-serif`,
+				figtree: `Figtree, sans-serif`,
 			},
 		},
 	},

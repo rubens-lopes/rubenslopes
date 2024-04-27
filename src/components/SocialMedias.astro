@@ -8,21 +8,23 @@ const t = useTranslations(Astro.currentLocale)
 
 <div class="flex space-x-6">
   <SocialMedia
-    title={t(`footer.email-label`)}
-    url="mailto:contact@rubenslop.es"
-    icon="mail"
-  />
-
-  <SocialMedia
     title={t(`footer.linked-in-label`)}
     url="https://www.linkedin.com/in/rubens-lopes/"
     icon="linked-in"
   />
 
   <SocialMedia
+    class="dark:hidden"
     title={t(`footer.github-label`)}
     url="https://github.com/rubens-lopes"
     icon="gh"
+  />
+
+  <SocialMedia
+    class="hidden dark:block"
+    title={t(`footer.github-label`)}
+    url="https://github.com/rubens-lopes"
+    icon="gh_dark"
   />
 </div>
 
