@@ -1,6 +1,6 @@
 export const controls = {
   en: {
-    'controls.email-label': `Contact`,
+    'controls.email-label': `Reach out`,
     'controls.email-title': `Talk to me`,
   },
   'pt-br': {
