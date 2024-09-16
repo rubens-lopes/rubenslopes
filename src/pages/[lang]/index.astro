@@ -9,7 +9,7 @@ const lang = Astro.currentLocale
 ---
 
 <script is:inline>
-function get() {
+function getTheme() {
   return typeof localStorage !== `undefined` && `theme` in localStorage
     ? localStorage.getItem(`theme`)
     : getPrefersColorScheme()
@@ -33,14 +33,14 @@ function letThereBeLight() {
   if (typeof localStorage !== `undefined`) localStorage.theme = `light`
 }
 
-get() === `light` ? letThereBeLight() : lightsOut()
+getTheme() === `light` ? letThereBeLight() : lightsOut()
 </script>
 
 <html {lang} class="font-figtree bg-metallic-red">
 	<head>
-		<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
 
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
