@@ -24,7 +24,7 @@ const madeBy = t(`footer.made-by`)
 
     <p>&copy; Rubens Lopes, {year}.</p>
 
-    <a href={`/${Astro.currentLocale}/privacy-policy`}>{t('footer.privacy-policy-label')}</a>
+    <a href={`/${Astro.currentLocale ?? 'en'}/privacy-policy`}>{t('footer.privacy-policy-label')}</a>
 
     <div set:html={madeBy} class="self-start" />
   </div>
