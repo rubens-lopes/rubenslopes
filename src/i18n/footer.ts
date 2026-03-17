@@ -4,11 +4,13 @@ export const footer = {
     'footer.email-label': `Talk to me`,
     'footer.linked-in-label': `My LinkedIn profile`,
     'footer.github-label': `My GitHub profile`,
+    'footer.privacy-policy-label': `Privacy Policy`,
   },
   'pt-br': {
     'footer.made-by': `Design por {0} e {1}. Desenvolvido por mim.`,
     'footer.email-label': `Fale comigo`,
     'footer.linked-in-label': `Meu perfil no LinkedIn`,
     'footer.github-label': `Meu perfil no GitHub`,
+    'footer.privacy-policy-label': `Política de Privacidade`,
   },
 }
