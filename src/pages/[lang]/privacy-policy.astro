@@ -1,0 +1,104 @@
+---
+import SpeedInsights from '@vercel/speed-insights/astro'
+import Header from '$components/Header.astro'
+import Footer from '$components/Footer.astro'
+import '$styles/global.css'
+import { useTranslations } from '$i18n/utils'
+
+const lang = Astro.currentLocale ?? 'en'
+const validLocales = ['en', 'pt-br']
+if (!validLocales.includes(lang)) {
+  return Astro.redirect('/en/privacy-policy')
+}
+const t = useTranslations(lang as 'en' | 'pt-br')
+---
+
+<script is:inline>
+function getTheme() {
+  return typeof localStorage !== `undefined` && `theme` in localStorage
+    ? localStorage.getItem(`theme`)
+    : getPrefersColorScheme()
+}
+
+function getPrefersColorScheme() {
+  if (typeof window === `undefined`) return ``
+
+  return window.matchMedia('(prefers-color-scheme: dark)').matches
+    ? `dark`
+    : ``
+}
+
+function lightsOut() {
+  typeof document !== `undefined` && document.documentElement.classList.add(`dark`)
+  if (typeof localStorage !== `undefined`) localStorage.theme = `dark`
+}
+
+function letThereBeLight() {
+  typeof document !== `undefined` && document.documentElement.classList.remove(`dark`)
+  if (typeof localStorage !== `undefined`) localStorage.theme = `light`
+}
+
+getTheme() === `light` ? letThereBeLight() : lightsOut()
+</script>
+
+<html lang={lang === 'pt-br' ? 'pt-BR' : lang} class="font-figtree bg-metallic-red">
+	<head>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+		<title>{t('privacy-policy.title')} — Rubens Lopes &lt;Software Engineer /&gt;</title>
+	</head>
+
+	<body class="bg-snow dark:bg-dark-gunmetal text-lg text-eerie-black dark:text-white">
+		<div class="flex min-h-screen flex-col items-center">
+			<Header />
+
+			<content class="flex-1">
+				<div class="container mx-auto py-12 space-y-8">
+					<h1 class="text-2xl font-bold">{t('privacy-policy.title')}</h1>
+					<p class="text-taupe-gray">{t('privacy-policy.last-updated')}</p>
+
+					<section class="space-y-3">
+						<h2 class="text-xl font-semibold">{t('privacy-policy.section.controller.heading')}</h2>
+						<p set:html={t('privacy-policy.section.controller.body')} />
+					</section>
+
+					<section class="space-y-3">
+						<h2 class="text-xl font-semibold">{t('privacy-policy.section.data.heading')}</h2>
+						<p set:html={t('privacy-policy.section.data.body')} />
+					</section>
+
+					<section class="space-y-3">
+						<h2 class="text-xl font-semibold">{t('privacy-policy.section.cookies.heading')}</h2>
+						<p set:html={t('privacy-policy.section.cookies.body')} />
+					</section>
+
+					<section class="space-y-3">
+						<h2 class="text-xl font-semibold">{t('privacy-policy.section.third-party.heading')}</h2>
+						<p set:html={t('privacy-policy.section.third-party.body')} />
+					</section>
+
+					<section class="space-y-3">
+						<h2 class="text-xl font-semibold">{t('privacy-policy.section.contact.heading')}</h2>
+						<p set:html={t('privacy-policy.section.contact.body')} />
+					</section>
+
+					<section class="space-y-3">
+						<h2 class="text-xl font-semibold">{t('privacy-policy.section.rights.heading')}</h2>
+						<p set:html={t('privacy-policy.section.rights.body')} />
+					</section>
+				</div>
+			</content>
+
+			<Footer />
+		</div>
+		<SpeedInsights />
+	</body>
+</html>
